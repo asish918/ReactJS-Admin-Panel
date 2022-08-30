@@ -11,11 +11,16 @@ import PsychologyRoundedIcon from '@mui/icons-material/PsychologyRounded';
 import SettingsApplicationsRoundedIcon from '@mui/icons-material/SettingsApplicationsRounded';
 import AccountBoxRoundedIcon from '@mui/icons-material/AccountBoxRounded';
 import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
+import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
     return (
         <div className='sidebar'>
-            <div className="top"><span className="logo">Admin Panel</span></div>
+            <div className="top">
+                <Link to="/" style={{textDecoration:"none"}}>
+                <span className="logo">Admin Panel</span>
+                </Link>
+                </div>
             <hr />
 
             <div className="center">
@@ -27,15 +32,20 @@ const Sidebar = () => {
                     </li>
 
                     <p className="title">LISTS</p>
-                    
+                    <Link to="/users" style={{ textDecoration: "none" }}>
                     <li>
                         <PersonOutlineOutlinedIcon className='icon' />
                         <span>Users</span>
                     </li>
+                    </Link>
+
+                    <Link to="/products" style={{ textDecoration: "none" }}>
                     <li>
                         <StoreMallDirectoryRoundedIcon className='icon' />
                         <span>Products</span>
                     </li>
+                    </Link>
+
                     <li>
                         <CreditCardRoundedIcon className='icon' />
                         <span>Orders</span>
